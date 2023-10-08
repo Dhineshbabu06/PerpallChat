@@ -14,6 +14,8 @@ const io = new Server(server, {
   },
 });
 
+const PORT = process.env.PORT || 3000;
+
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
 
@@ -32,6 +34,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3001, () => {
+server.listen(PORT, () => {
   console.log("SERVER RUNNING");
 });
